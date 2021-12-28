@@ -1,7 +1,10 @@
 import { connect } from 'mongoose'
 
 async function init(): Promise<void> {
-  await connect('mongodb+srv://root:root@dbcrud.ybtki.mongodb.net/teste?retryWrites=true&w=majority');
+  await connect(process.env.MONGO_CONN, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true
+  })
 }
 
 init()

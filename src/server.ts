@@ -1,6 +1,9 @@
+const dotenv = require('dotenv');
+dotenv.config()
 import express from 'express'
 import './database'
 import { routes } from './routes';
+
 const app = express();
 
 app.use(express.json())
