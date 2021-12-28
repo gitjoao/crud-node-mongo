@@ -8,4 +8,4 @@ app.use(express.json())
 
 app.use(routes)
 
-app.listen(3000, () => console.log(`..::Server ready::..`))
+app.listen(parseInt(process.env.PORT, 10) | 8080, () => console.log(`..::Server ready::..`))
