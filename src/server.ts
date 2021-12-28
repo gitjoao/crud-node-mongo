@@ -8,4 +8,4 @@ app.use(express.json())
 
 app.use(routes)
 
-app.listen(() => console.log(`..::Server ready::..`))
+app.listen(3000, () => console.log(`..::Server ready::..`))
