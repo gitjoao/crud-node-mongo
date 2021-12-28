@@ -1,13 +1,13 @@
 import { Request, Response } from 'express'
-import { CreateUsersService } from '../services/CreateUsersService'
+import { UserRepository } from '../repository/userRepository'
 
-export class CreateUsersController {
+export class UsersController {
   async handle (request: Request, response: Response) {
     const { name, email } = request.body
 
-    const service = new CreateUsersService
+    const repository = new UserRepository
 
-    const result = await service.exec({ name, email })
+    const result = await repository.create({ name, email })
 
     if (result instanceof Error) {
       return response.status(400).json({error: result.message})
