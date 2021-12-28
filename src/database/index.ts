@@ -1,3 +1,10 @@
-import { createConnection } from 'typeorm'
+import { ConnectionOptions, createConnection } from 'typeorm'
 
-createConnection()
+const options: ConnectionOptions = {
+  type: 'sqlite',
+  database: './mydb.sql',
+  entities: ["build/**/*.entity{.ts,.js}"],
+  migrations: ["build/**/*.migration{.ts,.js}"],
+}
+
+createConnection(options)
